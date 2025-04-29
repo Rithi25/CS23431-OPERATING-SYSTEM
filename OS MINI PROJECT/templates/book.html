@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Tickets</title>
+    <script>
+        function addPassenger() {
+            const form = document.getElementById("passenger-form");
+            const newGroup = document.querySelector(".passenger-group").cloneNode(true);
+            form.appendChild(document.createElement("hr"));
+            form.appendChild(newGroup);
+        }
+    </script>
+</head>
+<body style="font-family:sans-serif;">
+    <h2>Enter Passenger Details</h2>
+    <form method="POST" id="passenger-form">
+        <div class="passenger-group">
+            <label>Name: <input type="text" name="name" required></label><br>
+            <label>Class:
+                <select name="class">
+                    <option value="Economy">Economy</option>
+                    <option value="Business">Business</option>
+                </select>
+            </label><br>
+            <label>Number of Tickets: <input type="number" name="tickets" value="1" min="1" required></label><br>
+            <label>CPU Algorithm:
+                <select name="algorithm">
+                    <option value="FCFS">FCFS</option>
+                    <option value="SJF">SJF</option>
+                </select>
+            </label><br>
+        </div>
+        <button type="button" onclick="addPassenger()">Add Another Passenger</button><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
